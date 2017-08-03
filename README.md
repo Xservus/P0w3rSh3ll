@@ -1,2 +1,3 @@
 # P0w3rSh3ll
-Enumeration Powershell Scripts
+Xservus Limited
+A small collection of Powershell Scripts useful for discovery and enumeration.
