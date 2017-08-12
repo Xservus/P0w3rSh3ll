@@ -2,7 +2,7 @@
 #could be more efficient by building an array and looping
 #left as one liners to allow for parent child or group customisation
 
-
+#get forest root high priv group members
 Get-ADGroupMember -Identity "Administrators" -AuthType Negotiate -Recursive | select -Property * | Export-Csv -NoClobber "Builtin-admins.csv"
 Get-ADGroupMember -Identity "Domain Admins" -AuthType Negotiate -Recursive| select -Property * | Export-Csv -NoClobber "Domain Admins.csv"
 Get-ADGroupMember -Identity "Enterprise Admins" -AuthType Negotiate -Recursive| select -Property * | Export-Csv -NoClobber "Enterprise Admins.csv"
@@ -14,3 +14,6 @@ Get-ADGroupMember -Identity "Cert Publishers" -AuthType Negotiate -Recursive| se
 Get-ADGroupMember -Identity "DHCP Administrators" -AuthType Negotiate -Recursive| select -Property * | Export-Csv -NoClobber "DHCP administrators.csv"
 Get-ADGroupMember -Identity "DnsAdmins" -AuthType Negotiate -Recursive| select -Property * | Export-Csv -NoClobber "Dns admins.csv"
 Get-ADGroupMember -Identity "Group Policy Creator Owners" -AuthType Negotiate -Recursive| select -Property * | Export-Csv -NoClobber "Group Policy Creator owners.csv"
+
+#get exchange org admins
+Get-ADGroupMember -Identity "Exchange Organization Administrators" -AuthType Negotiate -Recursive| select -Property * | Export-Csv -NoClobber "Exchange Organization Administrators.csv"
