@@ -1,3 +1,4 @@
+#credit - https://communities.vmware.com/thread/304827
 #Main Variables 
 $sVCentre = "VC IP" 
 $sVCUser = "administrator@domain" 
