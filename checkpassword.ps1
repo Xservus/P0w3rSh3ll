@@ -21,7 +21,7 @@ write-host $haveib33npw3d
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
-#invoke a direct request (this can be sniffed)
+#invoke a direct request (don't do this!)
 #Invoke-WebRequest -Uri $haveib33npw3d | Select-Object -ExpandProperty Content
 
 #better to do a range find
