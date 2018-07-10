@@ -1,0 +1,30 @@
+$credential  =  Get-Credential
+########################
+
+Connect-SPOService -Url https://xsas-admin.sharepoint.com -Credential ($credential)
+
+#$user = Get-SPOExternalUser -Filter target@email.com  #Provide the email address of the user
+$user = Get-SPOExternalUser -Filter target@email.com
+
+write-host $user.DisplayName
+
+Remove-SPOExternalUser -UniqueIDs @($user.UniqueId)
+
+#Get-SPOExternalUser
+
+$sites = Get-SPOSite
+
+    ForEach($site in $sites){
+
+    $siteuser = Get-SPOUser -Site $site
+
+    write-host $site.url
+
+   
+        ForEach($spuser in $siteuser)
+        {
+            write-host "Login name = " $spuser.LoginName
+           #Remove-SPOUser -Site $site.url –LoginName "target_email.com#ext#@yourdomain.com"
+           Remove-SPOUser -Site $site.url –LoginName "target_email.com#ext#@yourdomain.com"
+        }
+}
